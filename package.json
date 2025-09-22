@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "linear-time-in-status",
   "description": "Unofficial extension to show time in status for Linear issues.",
   "version": "0.0.1",
