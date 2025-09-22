@@ -9,18 +9,15 @@
     "48": "images/logo_48.png",
     "128": "images/logo_128.png"
   },
-  "permissions": [
-    "activeTab",
-    "scripting",
-    "declarativeContent"
-  ],
   "host_permissions": [
-    "<all_urls>"
+    "*://linear.app/*",
+    "*://*.linear.app/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "*://linear.app/*",
+        "*://*.linear.app/*"
       ],
       "js": [
         "content/scripts.js"
