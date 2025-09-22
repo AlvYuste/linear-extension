@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json.schemastore.org/chrome-manifest.json",
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "name": "linear-extension",
+  "description": "A Chrome extension that enhances the Linear issue detail page by adding specific sections.",
+  "icons": {
+    "48": "images/extension_48.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "declarativeContent"
+  ],
+  "host_permissions": [
+    "https://linear.app/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/extension_48.png"
+      ],
+      "matches": [
+        "https://linear.app/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://linear.app/*"
+      ],
+      "js": [
+        "src/content/scripts.js"
+      ],
+      "css": [
+        "src/styles/content.css"
+      ]
+    }
+  ],
+  "author": "Alvaro Yuste"
+}

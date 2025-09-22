@@ -1,0 +1,20 @@
+.linear-ext-title {
+  display: flex;
+  flex-direction: column;
+  margin-left: -6px;
+  padding-bottom: 12px;
+}
+
+.linear-ext-title-container {
+  width: 95px;
+  margin: 16px 0px 10px 6px;
+  flex-shrink: 0;
+}
+.linear-ext-title-container span {
+  font-style: normal;
+  text-align: left;
+  color: lch(63.975 1.933 272);
+  line-height: normal;
+  font-size: var(--font-size-miniPlus);
+  font-weight: var(--font-weight-medium);
+}
