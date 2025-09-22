@@ -102,20 +102,20 @@
           <span>Time in status</span>
         </div>
       </div>
-      ${Object.entries(statusesDictionary)
-        .map(([status, { icon, totalTime }]) => {
-          return `
-              <div class="linear-ext-item">
-                ${icon?.outerHTML || ""}
-                <div class="linear-ext-item-name">
-                  <span>${status}</span>
-                </div>
-                <div class="linear-ext-item-time">
-                  <span>${formatDuration(totalTime)}</span>
-                </div>
-              </div>
-            `;
-        })
+      ${statuses
+        .map(
+          ([status, { icon, totalTime }]) => `
+          <div class="linear-ext-item">
+            ${icon?.outerHTML || ""}
+            <div class="linear-ext-item-name">
+              <span>${status}</span>
+            </div>
+            <div class="linear-ext-item-time">
+              <span>${formatDuration(totalTime)}</span>
+            </div>
+          </div>
+        `
+        )
         .join("")}
     `;
     return panel;
@@ -144,8 +144,6 @@
     childList: true,
     subtree: true,
   });
-
-  // initial attempt
   updateTimeInStatusPanel();
   setInterval(updateTimeInStatusPanel, 3000);
 })();
