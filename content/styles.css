@@ -1,3 +1,7 @@
+.linear-ext-panel {
+  font-size: var(--font-size-miniPlus);
+  font-weight: var(--font-weight-medium);
+}
 .linear-ext-title {
   display: flex;
   flex-direction: column;
@@ -15,6 +19,23 @@
   text-align: left;
   color: lch(63.975 1.933 272);
   line-height: normal;
-  font-size: var(--font-size-miniPlus);
-  font-weight: var(--font-weight-medium);
+  
+}
+
+.linear-ext-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+}
+.linear-ext-item svg {
+  margin-right: 6px;
+}
+.linear-ext-item-name {
+  color: lch(90.994 1.933 272);
+  flex: 1;
+}
+.linear-ext-item-time {
+  color: lch(63.975 1.933 272);
 }

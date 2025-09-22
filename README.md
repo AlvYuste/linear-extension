@@ -1,17 +1,6 @@
-# Linear extension
+# Linear - Time in Status
 
-This browser extension enhances the Linear issue detail page by adding specific sections.
-
-- Time in status
-- ...more to come
-
-## Installation
-
-```bash
-npx extension@latest create <project-name> --template content
-cd <project-name>
-npm install
-```
+This browser extension enhances the Linear issue detail page by adding a "Time in status" section
 
 ## Commands
 
@@ -38,7 +27,3 @@ Preview the extension in the browser.
 ```bash
 yarn preview
 ```
-
-## Learn more
-
-Learn more about this and other examples at @https://extension.js.org/

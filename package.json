@@ -1,14 +1,14 @@
 {
   "private": true,
-  "name": "linear-extension",
-  "description": "A modern browser extension content script example built with Extension.js. Demonstrates how to inject scripts into web pages with clean, maintainable code.",
+  "name": "linear-time-in-status",
+  "description": "Unofficial extension to show time in status for Linear issues.",
   "version": "0.0.1",
   "license": "MIT",
   "type": "module",
   "author": {
-    "name": "Your Name",
-    "email": "your@email.com",
-    "url": "https://yourwebsite.com"
+    "name": "Alvaro Yuste",
+    "email": "hola@alvaroyuste.com",
+    "url": "https://alvaroyuste.com"
   },
   "scripts": {
     "dev": "extension dev",

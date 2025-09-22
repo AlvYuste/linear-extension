@@ -2,10 +2,12 @@
   "$schema": "https://json.schemastore.org/chrome-manifest.json",
   "manifest_version": 3,
   "version": "0.0.1",
-  "name": "linear-extension",
-  "description": "A modern browser extension content script example built with Extension.js. Demonstrates how to inject scripts into web pages with clean, maintainable code.",
+  "name": "Linear - Time in Status",
+  "description": "Unofficial extension to show time in status for Linear issues.",
   "icons": {
-    "48": "images/extension_48.png"
+    "16": "images/logo_16.png",
+    "48": "images/logo_48.png",
+    "128": "images/logo_128.png"
   },
   "permissions": [
     "activeTab",
@@ -14,22 +16,6 @@
   ],
   "host_permissions": [
     "<all_urls>"
-  ],
-  "background": {
-    "chromium:service_worker": "background.js",
-    "firefox:scripts": [
-      "background.js"
-    ]
-  },
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "logo.png"
-      ],
-      "matches": [
-        "<all_urls>"
-      ]
-    }
   ],
   "content_scripts": [
     {
