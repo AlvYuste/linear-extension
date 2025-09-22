@@ -1,4 +1,5 @@
 # Linear - Time in Status
+<img width="128" height="128" alt="image" src="https://github.com/user-attachments/assets/9aff7bce-1c02-4418-b93a-1611b9d4ae06" />
 
 This browser extension enhances the Linear issue detail page by adding a "Time in status" section
 
