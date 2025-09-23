@@ -3,6 +3,8 @@
 
 This browser extension enhances the Linear issue detail page by adding a "Time in status" section
 
+<img width="640" height="400" alt="image" src="https://github.com/user-attachments/assets/7c7aa203-0800-4a00-83f8-5cc6a7b28720" />
+
 ## Commands
 
 ### dev
