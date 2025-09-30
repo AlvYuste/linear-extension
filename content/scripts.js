@@ -1,5 +1,5 @@
 (function () {
-  const PANEL_ID = "linear-ext-panel";
+  const PANEL_ID = "linear-time-in-status-panel";
   const CONTAINER_SELECTOR =
     "#skip-nav+div>div>div>div:nth-child(2)>div>div:nth-child(2)";
   const HISTORY_ITEM_SELECTOR = "[data-history-entry-id]";
@@ -52,46 +52,34 @@
   };
 
   const calculateStatusTimes = (history) => {
-    const statusesDictionary = {};
+    const statusesDictionary = { Total: { totalTime: 0 } };
     if (history.length < 1) {
       return statusesDictionary;
     }
+    const addTimeToStatus = (start, end) => {
+      const statusName = start.to || end?.from;
+      statusesDictionary[statusName] = statusesDictionary[statusName] || {
+        icon: start.icon,
+        totalTime: 0,
+      };
+      const endTime = end ? end.date.getTime() : Date.now();
+      const elaspsedTime = endTime - start.date.getTime();
+      statusesDictionary[statusName].totalTime += elaspsedTime;
+      statusesDictionary.Total.totalTime += elaspsedTime;
+    };
     // Iterate through the history to calculate time difference between events
-    for (let i = 1; i < history.length; i++) {
-      const statusName = history[i - 1].to || history[i].from;
-      if (!statusesDictionary[statusName]) {
-        statusesDictionary[statusName] = {
-          icon: history[i - 1].icon,
-          totalTime: 0,
-        };
-      }
-      statusesDictionary[statusName].totalTime +=
-        history[i].date.getTime() - history[i - 1].date.getTime();
-    }
-
-    // Handle the time for the *current* (final) status
-    const lastEvent = history[history.length - 1];
-    if (lastEvent.to) {
-      if (!statusesDictionary[lastEvent.to]) {
-        statusesDictionary[lastEvent.to] = {
-          icon: lastEvent.icon,
-          totalTime: 0,
-        };
-      }
-      statusesDictionary[lastEvent.to].totalTime +=
-        Date.now() - lastEvent.date.getTime();
-    }
+    history.forEach((start, i) => {
+      const end = i + 1 < history.length ? history[i + 1] : undefined;
+      addTimeToStatus(start, end);
+    });
     return statusesDictionary;
   };
 
   const createTimeInStatusPanel = (statusesDictionary) => {
     if (document.getElementById(PANEL_ID)) {
-      return null;
+      return;
     }
     const statuses = Object.entries(statusesDictionary);
-    if (statuses.length < 1) {
-      return null;
-    }
     const panel = document.createElement("div");
     panel.id = PANEL_ID;
     panel.className = "linear-ext-panel";
